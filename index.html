@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab1</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>EasyFood</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Услуги" onclick="slowScroll('#main')">Услуги</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Связь">Связь</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Лето закончилось!</h1>
+    <h3>Нету смысла следить за фигурой,а вкусная еда сделает тебя счастливей</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Бесплатная доставка вкусной еды домой и в офис в Виннице!</h2>
+      <span>Блюда на любой вкус</span>
+    </div>
+    <div class="text">
+      <span>Правда, здорово, когда самые лучшие украинские повара готовят вкуснейшую еду  именно для Вас? Выпекают ароматные булочки из вручную замешанного теста, подбирают оригинальные ингредиенты и специи для пикантных соусов, готовят на гриле сочные котлеты для сытных и питательных бургеров? Профессионалы знают толк в приготовлении пищи, поэтому в их руках любое блюдо превращается в настоящий гастрономический праздник. Можно выбрать любимое блюдо или остановиться на новом незнакомом пока варианте.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Преимущества</h2>
+    <h4>Самая вкусная еда здесь и сейчас</h4>
+
+    <div class="img">
+      <img src="https://planet-x.net.ua/wp-content/uploads/2019/08/servirovka-2-800x445.jpg" alt="">
+      <span>Лучшие блюда всех стран мира у вас на столе</span>
+    </div>
+    <div class="img">
+      <img src="https://besplatka.ua/aws/34/25/51/44/gotovyi-biznes--dostavka-edy--picca-i-sushi-sluzhba-photo-b92c.jpg" alt="">
+      <span>Мгновенная доставка в любую точку Винницы</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Номер телефона <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Предложения,пожелания <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
